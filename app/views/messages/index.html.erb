@@ -12,7 +12,7 @@
       <% index += 1 %>
       <span class="label label-info"><%= message.name %>　（ <%= message.age %>歳 ）</span>
       <%= message.body %>
-      <%= link_to "Edit" , edit_message_path(message), class: "label label-success" %>
+      <%= link_to "編集" , edit_message_path(message), class: "label label-success" %>
       <%= link_to "削除", message, method: :delete, data: {confirm: '削除してもいいですか？'}, class: "label label-danger" %>
       
       <!--最後の行だけ「New!」を表示する。-->
