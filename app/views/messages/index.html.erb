@@ -22,33 +22,6 @@
   </div>
 </div>
 
-<%= form_for(Message.new) do |f| %>
+<% #部分テンプレートを読み込んでいる %>
+<%= render 'form' %>
 
-  <% if @message.errors.present? %>
-    <div class="alert alert-danger">
-      <%= alert %>
-      <ul>
-        <% @message.errors.full_messages.each do |full_message| %>
-          <li>
-            <%= full_message %>
-          </li>
-        <% end %> 
-      </ul>
-    </div>
-  <% end %>
-
-  <br/>
-  <div class="input-group">
-    <span class="input-group-addon" id="basic-addon1">名前</span>
-    <%= f.text_field :name, class: 'form-control' %>
-  </div>
-  
-  <div class="input-group">
-    <span class="input-group-addon" id="basic-addon1">内容</span>
-    <%= f.text_area :body, :cols => "50", :rows => "10", class: 'form-control' %>
-  </div>
-  
-  <br/>
-  <i class="glyphicon glyphicon-send">　</i>
-  <%= f.submit "投稿", class: "btn btn-sm btn-primary" %>
-<% end %>
