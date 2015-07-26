@@ -10,10 +10,10 @@
     <% index = 0 %>
     <% @messages.each do |message| %>
       <% index += 1 %>
-      <span class="label label-info"><%= message.name %></span>
+      <span class="label label-info"><%= message.name %>　（ <%= message.age %>才 ）</span>
       <%= message.body %>
       <%= link_to "Edit" , edit_message_path(message), class: "label label-success" %>
-      <%= link_to "削除", message, method: :delete, data: {confierm: '削除してもいいですか？'}, class: "label label-danger" %>
+      <%= link_to "削除", message, method: :delete, data: {confirm: '削除してもいいですか？'}, class: "label label-danger" %>
       
       <!--最後の行だけ「New!」を表示する。-->
       <% if index == @messages.count then %>
@@ -27,4 +27,6 @@
 
 <% #部分テンプレートを読み込んでいる %>
 <%= render 'form' %>
+
+
 
