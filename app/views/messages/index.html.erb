@@ -12,12 +12,12 @@
       <% index += 1 %>
       <span class="label label-info"><%= message.name %></span>
       <%= message.body %>
-      (<%= link_to "edit" , edit_message_path(message) %>
-        <%= link_to "destroy", message, method: :delete, data: {confierm: '削除してもいいですか？'} %>
-      )
+      <%= link_to "Edit" , edit_message_path(message), class: "label label-success" %>
+      <%= link_to "削除", message, method: :delete, data: {confierm: '削除してもいいですか？'}, class: "label label-danger" %>
+      
       <!--最後の行だけ「New!」を表示する。-->
       <% if index == @messages.count then %>
-      <span class="label label-warning">New!</span>
+      <span class="label label-warning">←New!</span>
       <% end %>
       <!--New!の表示終わり-->
       <br>
