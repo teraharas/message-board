@@ -24,6 +24,19 @@
 
 <%= form_for(Message.new) do |f| %>
 
+  <% if @message.errors.present? %>
+    <div class="alert alert-danger">
+      <%= alert %>
+      <ul>
+        <% @message.errors.full_messages.each do |full_message| %>
+          <li>
+            <%= full_message %>
+          </li>
+        <% end %> 
+      </ul>
+    </div>
+  <% end %>
+
   <br/>
   <div class="input-group">
     <span class="input-group-addon" id="basic-addon1">名前</span>
