@@ -10,7 +10,7 @@
     <% index = 0 %>
     <% @messages.each do |message| %>
       <% index += 1 %>
-      <span class="label label-info"><%= message.name %>　（ <%= message.age %>才 ）</span>
+      <span class="label label-info"><%= message.name %>　（ <%= message.age %>歳 ）</span>
       <%= message.body %>
       <%= link_to "Edit" , edit_message_path(message), class: "label label-success" %>
       <%= link_to "削除", message, method: :delete, data: {confirm: '削除してもいいですか？'}, class: "label label-danger" %>
